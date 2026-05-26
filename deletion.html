@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Policy & Request | ReadyHand Artificial Intelligence</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-hover: #0284c7;
+            --dark-bg: #030d1a;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --danger: #ef4444;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            width: 100%;
+            background: rgba(3, 13, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .btn-back {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover {
+            color: #fff;
+        }
+
+        /* HERO HEADER */
+        .legal-hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #06162d 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--danger);
+        }
+
+        .legal-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .legal-hero p {
+            color: #94a3b8;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CONTENT BLOCK */
+        .legal-body {
+            background: white;
+            padding: 50px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+        }
+
+        .meta-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--dark-bg);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 i {
+            color: var(--danger);
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 5px;
+        }
+
+        ul li {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        ul li i {
+            color: var(--danger);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        /* CALLOUT BOX */
+        .warning-box {
+            background: #fff5f5;
+            border-left: 4px solid var(--danger);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+
+        .warning-box h4 {
+            color: #991b1b;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* FORM STYLING */
+        .deletion-form {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            background: #fff;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--danger);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #dc2626;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020912;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media(max-width: 768px) {
+            .legal-body { padding: 30px 20px; }
+            .legal-hero h1 { font-size: 28px; }
+            .navbar { flex-direction: column; gap: 15px; text-align: center; }
+            .deletion-form { padding: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microchip" style="color: var(--primary)"></i> ReadyHand <span>Artificial Intelligence</span>
+            </a>
+            <a href="index.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to System Home
+            </a>
+        </div>
+    </header>
+
+    <!-- LEGAL HERO -->
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Data Deletion Policy</h1>
+            <p>Right to be Forgotten & Account Purge Protocols</p>
+        </div>
+    </section>
+
+    <!-- MAIN BODY CONTENT -->
+    <main class="container">
+        <div class="legal-body">
+            <div class="meta-date">
+                <strong>Last Updated:</strong> May 2026 | <strong>Policy Scope:</strong> User-Initiated System Data Removal
+            </div>
+
+            <p>
+                At ReadyHand Artificial Intelligence, we respect your right to privacy and control over your personal data. This Data Deletion Policy outlines how users can request the permanent removal of their accounts and associated processing logs from our integrated frameworks, including Student Management Systems, Biometric Attendance clusters, and WhatsApp notification nodes.
+            </p>
+
+            <h2><i class="fa-solid fa-circle-info"></i> 1. Roles in Data Deletion Requests</h2>
+            <p>
+                Depending on how your account was created, the processing mechanism changes:
+            </p>
+            <ul>
+                <li><i class="fa-solid fa-angles-right"></i> <strong>Institutional Users (Students, Parents, Staff):</strong> Your data is managed directly by your school, college, or organization (the Data Controller). ReadyHand Artificial Intelligence cannot delete individual institutional records without an authorized request from your institution's administration panel. Please contact your organization's admin desk first.</li>
+                <li><i class="fa-solid fa-angles-right"></i> <strong>Direct Enterprise Clients (Admins, System Subscribers):</strong> If you hold a direct account or subscription with ReadyHand Artificial Intelligence, you may request complete infrastructure deletion directly using the framework below.</li>
+            </ul>
+
+            <h2><i class="fa-solid fa-hourglass-half"></i> 2. What Data Is Removed?</h2>
+            <p>
+                Upon formal confirmation of a data deletion request, ReadyHand Artificial Intelligence initiates a permanent programmatic wipe of the following data layers within 30 days:
+            </p>
+            <ul>
+                <li><i class="fa-solid fa-trash-can"></i> Complete profile identifiers (Names, Email records, Encrypted Credentials).</li>
+                <li><i class="fa-solid fa-trash-can"></i> Associated attendance history logs and localized biometric transaction hashes.</li>
+                <li><i class="fa-solid fa-trash-can"></i> Historical system telemetry and automated WhatsApp API message routing logs.</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4><i class="fa-solid fa-triangle-exclamation"></i> Action Irreversibility Alert</h4>
+                <p style="margin-bottom: 0; color: #7f1d1d; font-size: 14px;">
+                    Once executed, cryptographic deletion is completely irreversible. Data backups, structural log timelines, and platform access pathways cannot be recovered or restored by our technical support engineers.
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-file-signature"></i> 3. Submit a Data Deletion Request</h2>
+            <p>
+                If you are a direct system subscriber or have been instructed by your administrator to log a direct platform purge, please complete the structural routing request below:
+            </p>
+
+            <!-- DELETION REQUEST FORM -->
+            <form class="deletion-form" action="mailto:developerrhai@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="fullName">Full Name / Institutional Entity Name</label>
+                    <input type="text" id="fullName" name="Name" class="form-control" placeholder="e.g., John Doe / ABC Institute" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddress">Registered Email Address</label>
+                    <input type="email" id="emailAddress" name="Email" class="form-control" placeholder="e.g., user@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountType">Your Structural System Role</label>
+                    <select id="accountType" name="Account Role" class="form-control" required>
+                        <option value="" disabled selected>Select your account configuration</option>
+                        <option value="Direct Enterprise Client / Enterprise Admin">Direct Enterprise Client / Enterprise Admin</option>
+                        <option value="Institutional Staff Member / Employee">Institutional Staff Member / Employee</option>
+                        <option value="Student / Parent Node">Student / Parent Node</option>
+                        <option value="Other / Third-Party Integration Access">Other / Third-Party Integration Access</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deletionReason">Reason for Deletion / Scope of Data to Wiped</label>
+                    <textarea id="deletionReason" name="Reason for Request" class="form-control" rows="4" placeholder="Please specify if you want an absolute account wipe or a specific module log cleared..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-dumpster-fire"></i> Transmit Data Deletion Request
+                </button>
+            </form>
+
+            <h2><i class="fa-solid fa-headset"></i> 4. Alternative Processing Desks</h2>
+            <p>
+                If the automated form route does not meet your specific operational parameters or you require immediate assistance regarding localized privacy safeguards, connect directly with our data protection officer:
+            </p>
+            <p style="background: var(--light-bg); padding: 15px; border-radius: 6px; border-left: 4px solid var(--danger); font-family: monospace; font-size: 14px; color: var(--dark-bg);">
+                <strong>Compliance Officer:</strong> Data Purge & Verification Team<br>
+                <strong>Secure Processing Desk Email:</strong> developerrhai@gmail.com<br>
+                <strong>Direct Helpline Contact:</strong> +91 8261050815
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            &copy; 2026 ReadyHand Artificial Intelligence. All Rights Reserved. Data retention parameters maintained securely.
+        </div>
+    </footer>
+
+</body>
+</html>

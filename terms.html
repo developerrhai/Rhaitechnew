@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | ReadyHand Artificial Intelligence</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-hover: #00d2ff;
+            --dark-bg: #030d1a;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            width: 100%;
+            background: rgba(3, 13, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .btn-back {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-back:hover {
+            color: #fff;
+        }
+
+        /* LEGAL COVER HEADER */
+        .legal-hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #06162d 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .legal-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .legal-hero p {
+            color: #94a3b8;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* DOCUMENT CONTENT */
+        .legal-body {
+            background: white;
+            padding: 50px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+        }
+
+        .meta-date {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--dark-bg);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 5px;
+        }
+
+        ul li {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        ul li i {
+            color: var(--primary);
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020912;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            .legal-body { padding: 30px 20px; }
+            .legal-hero h1 { font-size: 28px; }
+            .navbar { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microchip" style="color: var(--primary)"></i> ReadyHand <span>Artificial Intelligence</span>
+            </a>
+            <a href="index.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Back to System Home
+            </a>
+        </div>
+    </header>
+
+    <!-- LEGAL HERO -->
+    <section class="legal-hero">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <p>Framework Operational Governance & User Agreement</p>
+        </div>
+    </section>
+
+    <!-- LEGAL CONTENT BLOCK -->
+    <main class="container">
+        <div class="legal-body">
+            <div class="meta-date">
+                <strong>Last Updated:</strong> May 2026 | <strong>Version:</strong> 2.4.0-Core
+            </div>
+
+            <p>
+                Welcome to ReadyHand Artificial Intelligence. Please review these operational Terms and Conditions carefully. By deploying, implementing, accessing, browsing, or utilizing our enterprise software solutions, web modules, Student Management Systems, Biometric Attendance Architectures, custom applications, and LMS infrastructures, you acknowledge absolute alignment and contractual compliance with the conditions listed below.
+            </p>
+
+            <h2><i class="fa-solid fa-shield-halved"></i> 1. Scope of Enterprise Architecture</h2>
+            <p>
+                ReadyHand Artificial Intelligence grants client organizations a non-exclusive, non-transferable right to access and implement our integrated system nodes based strictly on explicit Service Level Agreements (SLAs). 
+            </p>
+            <ul>
+                <li><i class="fa-solid fa-chevron-right"></i> System modifications, interface configurations, and cloud provisioning structures are restricted to enterprise administration credentials assigned during setups.</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Clients are fully responsible for preserving strict operational safety over all credential hierarchies assigned to their internal system administrators, students, or workforce personnel.</li>
+            </ul>
+
+            <h2><i class="fa-solid fa-fingerprint"></i> 2. Biometric & Data Logging Frameworks</h2>
+            <p>
+                For deployments incorporating our Biometric Attendance Architecture, the user institution acts strictly as the primary **Data Controller**, while ReadyHand Artificial Intelligence acts as the structural **Data Processor**.
+            </p>
+            <ul>
+                <li><i class="fa-solid fa-chevron-right"></i> The institutional client guarantees that all personnel, employee groups, or student guardians have granted formal, valid, and lawful consent for capture, local caching, and real-time cloud data logging.</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Hardware layer failures stemming from tampering, electrical overloads, or external network link collapses fall completely outside ReadyHand Artificial Intelligence system maintenance scopes.</li>
+            </ul>
+
+            <h2><i class="fa-solid fa-code-branch"></i> 3. Intellectual Property Rights</h2>
+            <p>
+                All structural source codes, unique database architectures, graphic layout blocks, automated notification routing layers, engine mechanics (including high-concurrency evaluation structures), and mathematical frameworks utilized within the ReadyHand Artificial Intelligence matrix remain entirely the proprietary intellectual property of ReadyHand Artificial Intelligence and its Lead Architect. 
+            </p>
+            <p>
+                No client entity, administrator, or standard user may reverse engineer, replicate, extract, or sell elements of our custom software systems without written authorization signed directly by our founder.
+            </p>
+
+            <h2><i class="fa-solid fa-file-invoice-dollar"></i> 4. Commercial Frameworks & Subscription Cycles</h2>
+            <p>
+                Access pathways to cloud structures, WhatsApp API automation pipelines, and core system modules require timely clearance of set recurring fees or customized software deployment payments.
+            </p>
+            <ul>
+                <li><i class="fa-solid fa-chevron-right"></i> Delay of system subscription renewals exceeding fifteen (15) standard calendar days results in automatic gateway freezes to safeguard storage nodes.</li>
+                <li><i class="fa-solid fa-chevron-right"></i> Variable third-party infrastructure integrations (including local WhatsApp carrier fees, GSM gateway channels, or specific SMS APIs) fluctuate in alignment with international service provider rates.</li>
+            </ul>
+
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> 5. Limitation of Structural Liability</h2>
+            <p>
+                ReadyHand Artificial Intelligence maintains rigorous up-time practices across all multi-regional distributed clusters. However, we assume no monetary liability for functional productivity losses, temporary communication delays via cellular carrier networks, structural database blackouts triggered by localized upstream cloud provider disruptions, or data inaccuracies arising from improper terminal configuration by your staff.
+            </p>
+
+            <h2><i class="fa-solid fa-gavel"></i> 6. Jurisdictional Governance</h2>
+            <p>
+                These systemic Terms and Conditions are governed completely in accordance with the regulatory laws of India. Any unresolved corporate disputes or architectural system validation issues will be subject to exclusive legal resolution tracks in the courts of Pune, Maharashtra, India.
+            </p>
+
+            <h2><i class="fa-solid fa-comments"></i> 7. Clarification Desk</h2>
+            <p>
+                For complex system validation inquiries, enterprise SLA explanations, or structural clarifications regarding these operational guidelines, connect directly with our engineering triage deck at:
+            </p>
+            <p style="background: var(--light-bg); padding: 15px; border-radius: 6px; border-left: 4px solid var(--primary); font-family: monospace; font-size: 14px; color: var(--dark-bg);">
+                <strong>Email Reference:</strong> developerrhai@gmail.com<br>
+                <strong>System Helpline:</strong> +91 8261050815
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            &copy; 2026 ReadyHand Artificial Intelligence. All Rights Reserved. Operational agreements logged securely.
+        </div>
+    </footer>
+
+</body>
+</html>

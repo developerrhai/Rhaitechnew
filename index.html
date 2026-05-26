@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadyHand Artificial Intelligence | Enterprise Automation & Management Systems</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-hover: #00d2ff;
+            --dark-bg: #030d1a;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            width: 100%;
+            background: rgba(3, 13, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(3, 13, 26, 0.94) 40%, rgba(14, 165, 233, 0.15)),
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            background: linear-gradient(to right, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 40px;
+            color: #cbd5e1;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark-bg);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        /* GENERAL SECTIONS */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-light {
+            background: #fff;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: var(--dark-bg);
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        /* SERVICES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(3, 13, 26, 0.06);
+            border-color: #bae6fd;
+        }
+
+        .card-icon {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: #f0f9ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .card-features {
+            list-style: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .card-features li {
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-features li i {
+            color: #10b981;
+            font-size: 12px;
+        }
+
+        /* WHY CHOOSE US VALUE PROPOSITION */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .value-box i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .value-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-bg);
+            margin-bottom: 12px;
+        }
+
+        .value-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* TECHNOLOGY PARTNERS */
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .brand-card {
+            background: var(--light-bg);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .brand-card:hover {
+            background: #fff;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .brand-card i {
+            font-size: 32px;
+            color: #94a3b8;
+            transition: var(--transition);
+        }
+
+        .brand-card:hover i {
+            color: var(--primary);
+        }
+
+        .brand-card span {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* TESTIMONIALS & CLIENTS */
+        .client-logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .client-logo-wrapper {
+            width: 160px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .client-logo-wrapper:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .client-logo-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-bg);
+        }
+
+        .testimonial-author span {
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-text-block {
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        .about-text-block h4 {
+            font-size: 20px;
+            color: var(--dark-bg);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .about-text-block p {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* FOUNDER SECTION */
+        .founder-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .founder-card {
+            background: var(--dark-bg);
+            border-radius: 16px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            box-shadow: 0 20px 40px rgba(3, 13, 26, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 350px;
+            height: 350px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+
+        .founder-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), #0284c7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 6px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .founder-image i {
+            font-size: 80px;
+            color: #ffffff;
+        }
+
+        .founder-content {
+            color: white;
+            z-index: 2;
+        }
+
+        .founder-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .founder-content .role {
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .founder-content p {
+            color: #cbd5e1;
+            font-size: 15.5px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .founder-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .skill-tag i {
+            color: var(--primary);
+        }
+
+        .skill-tag:hover {
+            background: rgba(14, 165, 233, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        /* STATS SECTION */
+        .stats {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #06162d 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            font-size: 52px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 14px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* ECOSYSTEM MATRIX TABLE */
+        .matrix-table-wrapper {
+            overflow-x: auto;
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 600px;
+        }
+
+        .matrix-table th {
+            background: #f1f5f9;
+            color: var(--dark-bg);
+            padding: 15px;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .matrix-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        /* CONTACT FORM */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-minimal-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-minimal-card i {
+            font-size: 24px;
+            color: var(--primary);
+            background: #f0f9ff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .contact-minimal-card h4 {
+            font-size: 16px;
+            color: var(--dark-bg);
+            margin-bottom: 2px;
+        }
+
+        .contact-minimal-card p, .contact-minimal-card a {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .form-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.01);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark-bg);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020912;
+            color: white;
+            padding: 80px 0 30px;
+            font-size: 14px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-box h3 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-box h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-box p {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .footer-box a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: var(--transition);
+        }
+
+        .footer-box a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .bottom-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media(max-width: 992px) {
+            .hero h1 { font-size: 42px; }
+            .navbar { flex-direction: column; gap: 20px; padding: 25px 0; }
+            .section { padding: 80px 0; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .founder-card { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .founder-skills { justify-content: center; }
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 15px; }
+            .section-title h2 { font-size: 26px; }
+            nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
+            nav ul li a { font-size: 13px; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fa-solid fa-microchip" style="color: var(--primary)"></i> ReadyHand <span>Artificial Intelligence</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Advantages</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ReadyHand <span>Artificial Intelligence</span></h1>
+            <p>
+                Engineered cloud frameworks by ReadyHand Artificial Intelligence built to automate institutional governance, corporate workforce logistics, high-concurrency evaluation models, custom mobile apps, and enterprise LMS architectures. We optimize complex administration through verified technical deployment.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    Explore Our Suites <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    Request System Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SUITE SECTION -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Enterprise Software & Learning Ecosystems</h2>
+                <p>Explore the operational capabilities, custom applications, and training architectures built natively inside the ReadyHand Artificial Intelligence network.</p>
+            </div>
+
+            <div class="grid">
+                <!-- Card 1: Student Management System -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Student Management System</h3>
+                    <p>A multi-tier centralized system engineered by ReadyHand Artificial Intelligence to govern complete educational institution lifecycles, drop manual processing tasks, and lock administration security leakage.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Automated enquiry pipelines & registrations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Dynamic multi-branch fee matrix & gateway logs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Smart Library management with barcode/RFID</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Advanced institutional inventory tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> GPS real-time bus route allocations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Automated grading books with digital reports</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Biometric Attendance Architecture -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3>Biometric Attendance Ecosystem</h3>
+                    <p>High-precision hardware and software deployment setups developed by ReadyHand Artificial Intelligence to lock down tracking leakages and establish transparent log tracking.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time cloud sync with local server fallback options</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Multi-terminal face, fingerprint, and RFID tracking logs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Instant automated WhatsApp push notifications for alerts</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct API connection layers into HRMS and payroll databases</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Geofenced mobile tracking options for remote teams</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tamper-proof logs with structural security mapping</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Learning Management System (LMS) -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3>Learning Management System (LMS)</h3>
+                    <p>An enterprise-grade, end-to-end e-learning infrastructure custom-built by ReadyHand Artificial Intelligence for continuous corporate training, structured coaching programs, and academic courses.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Structured multi-tier video course hosting channels</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Digital assignment dropboxes with reviewer feedback</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Live virtual classroom integrations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Student progress maps & completion percentages</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Automatic generation engines for certificates</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Subject forum modules for peer engagement</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Custom Mobile Apps & Portals -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Custom Mobile Apps & Portals</h3>
+                    <p>Tailored Web, iOS, and Android applications packaged, developed, and launched under your unique brand name by ReadyHand Artificial Intelligence.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Dedicated student & parent mobile dashboards</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time push notifications for fee alerts</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Secure offline document storage for learning</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Native biometric face/fingerprint app security</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Performance scorecard visualization grids</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Responsive enterprise administration supervisor app</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Online Test Series Engine -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Online Test Series Engine</h3>
+                    <p>High-concurrency online evaluation engine built by ReadyHand Artificial Intelligence, capable of hosting large-scale multiple choice exams with structural data stability and integrity.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Mathematical & formula rich question banks</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Strict automated browser window security locking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Section-wise percentile performance tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Auto-grading matrix reports with instant feedback</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Billing & ERP Software -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3>Billing & ERP Software</h3>
+                    <p>Compliant billing automation infrastructure designed by ReadyHand Artificial Intelligence, tailored for distribution setups, commercial offices, retail outlets, and coaching networks.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Automated GST and multi-tier tax breakdown maps</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time multi-location warehouse stock tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pro-forma estimation & commercial invoices</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Profit-loss daily automated push reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Card 7: HRMS & Payroll Architecture -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>HRMS & Payroll Architecture</h3>
+                    <p>Personnel framework engineered by ReadyHand Artificial Intelligence to control employee work shifts, custom payroll tracks, tax declarations, and compliance monitoring.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Configurable professional shift definitions</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tax, allowance, and deduction calculations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Employee self-service application dashboards</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Digital hardware provisioning asset tracking</li>
+                    </ul>
+                </div>
+                <!-- Card 8: WhatsApp API Official -->
+<div class="card">
+    <div class="card-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+    <h3>Official WhatsApp API & Blue Tick Verification</h3>
+
+    <p>
+        Enterprise-grade WhatsApp Business API integration solutions developed by ReadyHand Artificial Intelligence for institutions, enterprises, coaching networks, and customer communication systems with official verification support and automation infrastructure.
+    </p>
+
+    <ul class="card-features">
+        <li><i class="fa-solid fa-circle-check"></i> Official WhatsApp Business API setup & onboarding</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Green/Blue Tick verification assistance for trusted brands</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Automated attendance, fee, and alert notifications</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Bulk messaging systems with approved templates</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> CRM, ERP, LMS, and website integration support</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Multi-agent WhatsApp support dashboards</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Chatbot automation with instant response flows</li>
+
+        <li><i class="fa-solid fa-circle-check"></i> Secure cloud-based communication architecture</li>
+    </ul>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section section-light" id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Competitive Advantage</h2>
+                <p>Why modern institutions and enterprises trust ReadyHand Artificial Intelligence to run their critical back-office infrastructures.</p>
+            </div>
+            <div class="value-grid">
+                <div class="value-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Enterprise Grade Security</h4>
+                    <p>All core architecture databases run on end-to-end encrypted tunnels ensuring structural data isolation and asset safety.</p>
+                </div>
+                <div class="value-box">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Sub-Second Sync Speeds</h4>
+                    <p>Biometric responses, LMS course milestones, and mobile app logs fire in real-time across connected clusters.</p>
+                </div>
+                <div class="value-box">
+                    <i class="fa-solid fa-cubes"></i>
+                    <h4>Modular Custom Architecture</h4>
+                    <p>Choose only the web modules or custom native applications your company needs today. Scale seamlessly as operations expand.</p>
+                </div>
+                <div class="value-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <h4>SLA-Backed Engineers</h4>
+                    <p>Direct priority engineering contact options ensure system uptimes are constantly preserved without downtime lapses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About ReadyHand Artificial Intelligence</h2>
+                <p>Learn more about our strict operational standards, infrastructure resilience, and vision.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text-block">
+                    <h4>Enterprise Operations Redefined</h4>
+                    <p>
+                        ReadyHand Artificial Intelligence is a specialized technology establishment dedicated to engineering scalable automation platforms, sophisticated custom management architectures, high-performance LMS architectures, interactive mobile apps, and reliable enterprise infrastructure models. We build platforms designed to handle complex administrative challenges for high-density academic environments, multi-regional businesses, commercial trade setups, and corporate operations groups.
+                    </p>
+                </div>
+                <div class="about-text-block">
+                    <h4>Unified Cloud Frameworks</h4>
+                    <p>
+                        By combining custom websites, native mobile applications, interactive LMS interfaces, discrete physical hardware devices, and secure database frameworks under unified web dashboards, ReadyHand Artificial Intelligence allows leadership teams to optimize structural productivity, eliminate ledger leaks, and monitor operations with deep mathematical certainty.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP / FOUNDER SECTION -->
+    <section class="section founder-section" id="leadership">
+        <div class="container">
+            <div class="founder-card">
+                <!-- Founder Visual / Avatar -->
+                <div class="founder-image">
+    <img src="founder.png" alt="Mayur Shinde"
+         style="
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:50%;">
+</div>
+                
+                <!-- Founder Bio & Details -->
+                <div class="founder-content">
+                    <h3>Mayur Shinde</h3>
+                    <span class="role">Founder & Lead Architect</span>
+                    
+                    <p>
+                        As the Founder of ReadyHand Artificial Intelligence, Mayur Shinde is focused on engineering innovative software and automation pipelines for educational institutions and modern enterprises. Deeply passionate about technology and digital transformation, he is dedicated to building highly scalable, reliable, and user-friendly systems that strip away complexity, simplify daily operations, and improve structural communication. 
+                    </p>
+                    
+                    <div class="founder-skills">
+                        <span class="skill-tag"><i class="fa-solid fa-fingerprint"></i> Biometric Attendance Systems</span>
+                        <span class="skill-tag"><i class="fa-brands fa-whatsapp"></i> WhatsApp API Automation</span>
+                        <span class="skill-tag"><i class="fa-solid fa-server"></i> Cloud & Local Server Architecture</span>
+                        <span class="skill-tag"><i class="fa-solid fa-graduation-cap"></i> Student Management Platforms</span>
+                        <span class="skill-tag"><i class="fa-solid fa-robot"></i> AI-Powered Business Tools</span>
+                        <span class="skill-tag"><i class="fa-solid fa-code"></i> Web-Based Development</span>
+                        <span class="skill-tag"><i class="fa-solid fa-database"></i> Database & API Integration</span>
+                        <span class="skill-tag"><i class="fa-solid fa-chart-pie"></i> Smart Reporting Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h2>500+</h2>
+                    <p>Enterprises & Institutes</p>
+                </div>
+                <div class="stat-box">
+                    <h2>50+</h2>
+                    <p>Deployed Software Modules</p>
+                </div>
+                <div class="stat-box">
+                    <h2>24/7</h2>
+                    <p>Live Infrastructure Monitoring</p>
+                </div>
+                <div class="stat-box">
+                    <h2>100%</h2>
+                    <p>Cloud Automation Solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Initiate Infrastructure Architecture Consultation</h2>
+                <p>Submit your organizational parameters below to schedule a precise technical capability briefing with ReadyHand Artificial Intelligence.</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Info cards -->
+                <div class="contact-info-cards">
+                    <div class="contact-minimal-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Corporate Desk</h4>
+                            <p><a href="mailto:developerrhai@gmail.com">developerrhai@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-minimal-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Support Helpline</h4>
+                            <p><a href="tel:+918261050815">+91 8261050815</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-minimal-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Engineering Headquarters</h4>
+                            <p>Pimpri Chinchwad, Pune, Maharashtra, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Functional Form Interface -->
+                <div class="form-box">
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Consultation Request Logged under ReadyHand Artificial Intelligence Core Ledger.');">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="client-name">Full Corporate Name</label>
+                                <input type="text" id="client-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="org-name">Institution / Enterprise</label>
+                                <input type="text" id="org-name" placeholder="Organization name" required>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="client-email">Business Email Address</label>
+                                <input type="email" id="client-email" placeholder="corp@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="suite-select">Target Suite Requirement</label>
+                                <select id="suite-select">
+                                    <option>Biometric Attendance Ecosystem</option>
+                                    <option>Student Management System Suite</option>
+                                    <option>Enterprise Learning Management System (LMS)</option>
+                                    <option>Custom Website & Branded Mobile Apps</option>
+                                    <option>Online Test Series Framework</option>
+                                    <option>Enterprise Billing & ERP Software</option>
+                                    <option>HRMS & Payroll Automation Core</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 25px;">
+                            <label for="message-box">Structural Operational Requirements</label>
+                            <textarea id="message-box" rows="4" placeholder="Detail your specific systemic requirements and estimated user count..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+                            Submit Request to ReadyHand AI Systems Engineers
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CLIENTS & REVIEWS SECTION -->
+    <section class="section section-light" id="clients">
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Trusted Clients & Institutional Partners</h2>
+                <p>
+                    Organizations, institutes, and enterprises using ReadyHand Artificial Intelligence
+                    software ecosystems, biometric infrastructures, LMS systems, and automation solutions.
+                </p>
+            </div>
+<!-- CLIENT LOGOS -->
+<div class="client-logo-row"
+     style="
+        display:flex;
+        gap:25px;
+        justify-content:center;
+        align-items:stretch;
+        flex-wrap:nowrap;
+        margin-top:50px;
+        overflow-x:auto;
+        padding-bottom:10px;">
+
+    <!-- CLIENT 1 -->
+    <div style="
+        min-width:220px;
+        background:#ffffff;
+        border-radius:20px;
+        padding:25px 20px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.06);
+        transition:0.4s ease;">
+
+        <div style="
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+            background:#f8fafc;
+            border-radius:16px;
+            padding:15px;">
+
+            <img src="client1.png"
+                 alt="Client 1"
+                 style="
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit:contain;">
+        </div>
+
+        <h3 style="
+            font-size:17px;
+            color:var(--dark-bg);
+            margin-bottom:6px;">
+            Dnyanmuktai Career Foundation
+        </h3>
+
+        <p style="
+            font-size:14px;
+            color:var(--primary);
+            font-weight:500;">
+            Koregoan Bhima, Pune
+        </p>
+    </div>
+
+    <!-- CLIENT 2 -->
+    <div style="
+        min-width:220px;
+        background:#ffffff;
+        border-radius:20px;
+        padding:25px 20px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.06);
+        transition:0.4s ease;">
+
+        <div style="
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+            background:#f8fafc;
+            border-radius:16px;
+            padding:15px;">
+
+            <img src="client2.png"
+                 alt="Client 2"
+                 style="
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit:contain;">
+        </div>
+
+        <h3 style="
+            font-size:17px;
+            color:var(--dark-bg);
+            margin-bottom:6px;">
+            Vidyaaniketan Professional Academy
+        </h3>
+
+        <p style="
+            font-size:14px;
+            color:var(--primary);
+            font-weight:500;">
+            Indapur, Pune
+        </p>
+    </div>
+
+    <!-- CLIENT 3 -->
+    <div style="
+        min-width:220px;
+        background:#ffffff;
+        border-radius:20px;
+        padding:25px 20px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.06);
+        transition:0.4s ease;">
+
+        <div style="
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+            background:#f8fafc;
+            border-radius:16px;
+            padding:15px;">
+
+            <img src="client3.png"
+                 alt="Client 3"
+                 style="
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit:contain;">
+        </div>
+
+        <h3 style="
+            font-size:17px;
+            color:var(--dark-bg);
+            margin-bottom:6px;">
+            Yes!+ Plus Academy
+        </h3>
+
+        <p style="
+            font-size:14px;
+            color:var(--primary);
+            font-weight:500;">
+            Pimpri Chinchwad, Pune
+        </p>
+    </div>
+
+    <!-- CLIENT 4 -->
+    <div style="
+        min-width:220px;
+        background:#ffffff;
+        border-radius:20px;
+        padding:25px 20px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.06);
+        transition:0.4s ease;">
+
+        <div style="
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+            background:#f8fafc;
+            border-radius:16px;
+            padding:15px;">
+
+            <img src="client4.png"
+                 alt="Client 4"
+                 style="
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit:contain;">
+        </div>
+
+        <h3 style="
+            font-size:17px;
+            color:var(--dark-bg);
+            margin-bottom:6px;">
+            Dnyansagar classes
+        </h3>
+
+        <p style="
+            font-size:14px;
+            color:var(--primary);
+            font-weight:500;">
+            Khandki, Pune
+        </p>
+    </div>
+
+    <!-- CLIENT 5 -->
+    <div style="
+        min-width:220px;
+        background:#ffffff;
+        border-radius:20px;
+        padding:25px 20px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.06);
+        transition:0.4s ease;">
+
+        <div style="
+            height:120px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom:20px;
+            background:#f8fafc;
+            border-radius:16px;
+            padding:15px;">
+
+            <img src="client5.png"
+                 alt="Client 5"
+                 style="
+                    max-width:100%;
+                    max-height:100%;
+                    object-fit:contain;">
+        </div>
+
+        <h3 style="
+            font-size:17px;
+            color:var(--dark-bg);
+            margin-bottom:6px;">
+            Merit-Home
+        </h3>
+
+        <p style="
+            font-size:14px;
+            color:var(--primary);
+            font-weight:500;">
+            Chinchwad, Pune
+        </p>
+    </div>
+
+</div>
+
+            <!-- REVIEWS -->
+            <div style="margin-top:80px;" class="section-title">
+                <h2>Client Reviews</h2>
+                <p>
+                    Real operational feedback from institutions and enterprises using ReadyHand AI systems.
+                </p>
+            </div>
+
+            <div class="testimonial-grid">
+
+                <!-- Review 1 -->
+                <div class="testimonial-card">
+                    <p>
+                        “ReadyHand Artificial Intelligence completely transformed our institute management.
+                        Fee tracking, attendance, online tests, and parent communication are now fully automated.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Dr. Abhishek Patil
+                        <span>Director, Professional Coaching Institute</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-card">
+                    <p>
+                        “The biometric attendance ecosystem is highly stable and accurate.
+                        WhatsApp alerts and cloud synchronization reduced manual workload drastically.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Rohan Kulkarni
+                        <span>HR Operations Head</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="testimonial-card">
+                    <p>
+                        “Their LMS platform and branded mobile application helped us scale online learning
+                        without technical complexity. Excellent support and deployment quality.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Priya Sharma
+                        <span>Academic Administrator</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="testimonial-card">
+                    <p>
+                        “ReadyHand Artificial Intelligence systems delivered a fully customized ERP and billing system tailored to our workflow.
+                        Reporting and stock management became significantly faster.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Amit Deshmukh
+                        <span>Business Operations Manager</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="testimonial-card">
+                    <p>
+                        “The online examination engine handled thousands of concurrent test submissions smoothly.
+                        Performance analytics and reports are exceptionally detailed.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Snehal Joshi
+                        <span>Examination Coordinator</span>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="testimonial-card">
+                    <p>
+                        “Professional deployment, responsive engineering team, and scalable infrastructure.
+                        ReadyHand Artificial Intelligence systems understands enterprise-grade system architecture deeply.”
+                    </p>
+
+                    <div class="testimonial-author">
+                        Nikhil Pawar
+                        <span>Technology Consultant</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-box">
+                    <h3>ReadyHand Artificial Intelligence</h3>
+                    <p>Delivering secure, modular cloud automation frameworks, biometric setups, mobile apps, websites, and learning environments engineered to elevate corporate and institutional operational capacities.</p>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services Suite</a>
+                    <a href="#why-us">Advantages</a>
+                    <a href="#leadership">Leadership</a>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Legal & Compliance</h3>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="deletion.html">Data Deletion Policy</a>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Product Architectures</h3>
+                    <a href="#services">Biometric Attendance Systems</a>
+                    <a href="#services">Student Administration Matrix</a>
+                    <a href="#services">Custom LMS Platforms</a>
+                    <a href="#services">Website & App Ecosystems</a>
+                </div>
+            </div>
+
+            <div class="bottom-footer">
+                &copy; 2026 ReadyHand Artificial Intelligence. All Rights Reserved. System connections logged securely.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
