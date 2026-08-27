@@ -1,349 +1,727 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | ReadyHand Artificial Intelligence</title>
-    
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Privacy Policy | Institute CoreX</title>
 
     <style>
         :root {
             --primary: #0ea5e9;
-            --primary-hover: #00d2ff;
-            --dark-bg: #030d1a;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --light-bg: #f8fafc;
-            --border-color: #e2e8f0;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --secondary: #ff8a1f;
+            --dark: #06162d;
+            --darkest: #030d1a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --text: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --success: #16a34a;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background: var(--light-bg);
-            color: var(--text-main);
+            background: var(--light);
+            color: var(--text);
             line-height: 1.7;
         }
 
         .container {
             width: 90%;
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
 
-        /* HEADER & NAVIGATION */
+        /* HEADER */
+
         header {
-            width: 100%;
-            background: rgba(3, 13, 26, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, var(--darkest), var(--dark));
+            padding: 18px 0;
+            color: white;
         }
 
         .navbar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
+            gap: 20px;
         }
 
-        .logo {
-            color: #fff;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .btn-back {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-back:hover {
-            color: #fff;
-        }
-
-        /* PRIVACY COVER HEADER */
-        .legal-hero {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #06162d 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .legal-hero h1 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .legal-hero p {
-            color: #94a3b8;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* PRIVACY BODY CONTENT */
-        .legal-body {
-            background: white;
-            padding: 50px;
-            margin-top: 40px;
-            margin-bottom: 60px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
-        }
-
-        .meta-date {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        h2 {
-            font-size: 20px;
-            color: var(--dark-bg);
-            margin-top: 35px;
-            margin-bottom: 15px;
-            font-weight: 600;
+        .brand {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2 i {
-            color: var(--primary);
-            font-size: 16px;
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .brand h2 {
+            font-size: 22px;
+        }
+
+        .brand span {
+            color: var(--secondary);
+        }
+
+        .powered {
+            font-size: 13px;
+            color: #cbd5e1;
+            text-align: right;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark), #0b2b55);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+        }
+
+        /* CONTENT */
+
+        .policy-box {
+            background: white;
+            margin: 40px auto;
+            padding: 45px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .notice {
+            background: #eff8ff;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .notice strong {
+            color: var(--dark);
+        }
+
+        .date {
+            color: var(--muted);
+            font-size: 14px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--dark);
+            margin-top: 35px;
+            margin-bottom: 12px;
+            font-size: 22px;
         }
 
         p {
-            font-size: 15px;
-            color: #475569;
-            margin-bottom: 20px;
-            text-align: justify;
+            margin-bottom: 15px;
         }
 
         ul {
-            list-style: none;
+            padding-left: 25px;
             margin-bottom: 20px;
-            padding-left: 5px;
         }
 
-        ul li {
-            font-size: 14px;
-            color: #475569;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+        li {
+            margin-bottom: 8px;
         }
 
-        ul li i {
-            color: var(--primary);
-            font-size: 12px;
-            margin-top: 6px;
-        }
+        /* RELATIONSHIP CARD */
 
-        .table-responsive {
-            overflow-x: auto;
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             margin: 25px 0;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-            text-align: left;
+        .role-card {
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
         }
 
-        th {
-            background: var(--light-bg);
-            color: var(--dark-bg);
-            padding: 12px 15px;
-            font-weight: 600;
-            border-bottom: 2px solid var(--border-color);
+        .product-card {
+            border-top: 5px solid var(--primary);
         }
 
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border-color);
-            color: #475569;
+        .client-card {
+            border-top: 5px solid var(--secondary);
+        }
+
+        .role-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* APP LOGO */
+
+        .app-logo-section {
+            margin: 40px 0;
+            text-align: center;
+            padding: 30px;
+            background: #f1f5f9;
+            border-radius: 15px;
+        }
+
+        .app-logo {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #0b2b55, #173f72);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .sun {
+            font-size: 40px;
+            color: #ffb11b;
+        }
+
+        .book {
+            font-size: 40px;
+        }
+
+        .app-logo strong {
+            font-size: 17px;
+            margin-top: 8px;
+        }
+
+        .tagline {
+            color: #ffb11b;
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #f8fafc;
+            border-left: 5px solid var(--primary);
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
 
         /* FOOTER */
+
         footer {
-            background: #020912;
-            color: white;
-            padding: 30px 0;
+            background: var(--darkest);
+            color: #cbd5e1;
+            padding: 40px 0;
             text-align: center;
-            font-size: 13px;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer span {
+            color: var(--primary);
         }
 
         @media(max-width: 768px) {
-            .legal-body { padding: 30px 20px; }
-            .legal-hero h1 { font-size: 28px; }
-            .navbar { flex-direction: column; gap: 15px; text-align: center; }
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .powered {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .policy-box {
+                padding: 25px 20px;
+            }
+
+            .relationship-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container navbar">
-            <a href="index.html" class="logo">
-                <i class="fa-solid fa-microchip" style="color: var(--primary)"></i> ReadyHand <span>Artificial Intelligence</span>
-            </a>
-            <a href="index.html" class="btn-back">
-                <i class="fa-solid fa-arrow-left"></i> Back to System Home
-            </a>
-        </div>
-    </header>
+<!-- HEADER -->
 
-    <!-- LEGAL HERO -->
-    <section class="legal-hero">
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>Data Protection Protocols & Infrastructure Isolation Standards</p>
-        </div>
-    </section>
+<header>
+    <div class="container navbar">
 
-    <!-- MAIN PRIVACY CONTENT -->
-    <main class="container">
-        <div class="legal-body">
-            <div class="meta-date">
-                <strong>Effective Date:</strong> May 2026 | <strong>Policy Scope:</strong> Global Enterprise Deployments
+        <div class="brand">
+
+            <div class="brand-logo">ICX</div>
+
+            <div>
+                <h2>INSTITUTE <span>COREX</span></h2>
+                <small>Smart • Secure • Scalable</small>
             </div>
 
+        </div>
+
+        <div class="powered">
+            <strong>A Product of RHAI TECHNOLOGY</strong><br>
+            Powered by ReadyHand Artificial Intelligence
+        </div>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Privacy Policy</h1>
+
+        <p>
+            Institute CoreX – Multi-Institute SaaS Platform
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- POLICY -->
+
+<main class="container">
+
+<div class="policy-box">
+
+    <div class="notice">
+
+        <strong>Institute CoreX is a product of RHAI TECHNOLOGY.</strong><br>
+
+        Institute CoreX is a Software-as-a-Service (SaaS) platform designed
+        for multiple educational institutes. Arise Academy is one of our
+        clients using Institute CoreX under a SaaS subscription model.
+
+    </div>
+
+
+    <div class="date">
+
+        <strong>Effective Date:</strong> August 27, 2026 |
+        <strong>Last Updated:</strong> August 27, 2026
+
+    </div>
+
+
+    <h2>1. About Institute CoreX</h2>
+
+    <p>
+        Institute CoreX is a cloud-based educational and institutional
+        management platform developed, owned, and operated by
+        <strong>RHAI TECHNOLOGY</strong>.
+    </p>
+
+    <p>
+        The platform is designed to serve multiple independent educational
+        institutes, academies, coaching centers, schools, and training
+        organizations through a scalable Software-as-a-Service model.
+    </p>
+
+    <p>
+        Features may include student management, teacher management,
+        attendance, homework, assignments, fee management, communication,
+        academic tracking, reports, biometric integrations, and other
+        institutional management services.
+    </p>
+
+
+    <h2>2. Product and Client Relationship</h2>
+
+    <div class="relationship-grid">
+
+        <div class="role-card product-card">
+
+            <h3>Institute CoreX</h3>
+
             <p>
-                ReadyHand Artificial Intelligence operates as an enterprise software development entity specialized in building secure administrative frameworks, learning management structures, and high-precision automation engines. This policy transparently governs the processes through which we safeguard information handled within our web architectures, customer portals, custom mobile applications, and biometric integration sync nodes.
+                Institute CoreX is the software product and technology
+                platform owned and operated by RHAI TECHNOLOGY.
             </p>
 
-            <h2><i class="fa-solid fa-database"></i> 1. Information Categorization</h2>
+            <ul>
+                <li>Multi-institute SaaS platform</li>
+                <li>Cloud and software infrastructure</li>
+                <li>Technical maintenance</li>
+                <li>Security and access systems</li>
+                <li>Platform development and upgrades</li>
+            </ul>
+
+        </div>
+
+
+        <div class="role-card client-card">
+
+            <h3>Arise Academy</h3>
+
             <p>
-                Our architectures process telemetry and operational records into three structural divisions depending on your deployed configuration:
+                Arise Academy is an independent client institution using
+                Institute CoreX under a SaaS subscription or service model.
             </p>
-            
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data Layer</th>
-                            <th>Collected Components</th>
-                            <th>Processing Intent</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Institutional Base Data</strong></td>
-                            <td>Names, business emails, phone numbers, structural fee metrics, and student/personnel configurations.</td>
-                            <td>Powering Student Management Systems and corporate enterprise database configurations.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Biometric Logs</strong></td>
-                            <td>Hardware terminal logs, device identification hashes, and timestamp strings.</td>
-                            <td>Synchronizing employee/student tracking timelines into automated HRMS reporting pipelines.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Integration Vectors</strong></td>
-                            <td>WhatsApp API metadata strings, transaction references, and message status alerts.</td>
-                            <td>Executing real-time institutional event and payment warnings securely.</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <ul>
+                <li>Manages its own students and teachers</li>
+                <li>Controls institutional academic records</li>
+                <li>Manages fees and communication</li>
+                <li>Controls authorized user access</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <h2>3. Information Controller and Technology Provider</h2>
+
+    <p>
+        The educational institution, such as Arise Academy, is generally
+        responsible for collecting and managing its institutional,
+        student, parent, teacher, and staff information.
+    </p>
+
+    <p>
+        <strong>RHAI TECHNOLOGY</strong>, as the owner and operator of
+        Institute CoreX, provides the technology platform, hosting,
+        infrastructure, maintenance, and technical services required
+        to operate the SaaS platform.
+    </p>
+
+
+    <h2>4. Information We May Process</h2>
+
+    <ul>
+
+        <li>Student names and profile information</li>
+
+        <li>Parent or guardian information</li>
+
+        <li>Teacher and staff information</li>
+
+        <li>Mobile numbers and email addresses</li>
+
+        <li>Course, standard, batch, and academic information</li>
+
+        <li>Attendance and class records</li>
+
+        <li>Homework and assignment information</li>
+
+        <li>Fee, payment, receipt, and transaction references</li>
+
+        <li>Notifications and communication records</li>
+
+        <li>Device, application, and diagnostic information</li>
+
+    </ul>
+
+
+    <h2>5. How Information Is Used</h2>
+
+    <ul>
+
+        <li>To provide Institute CoreX services</li>
+
+        <li>To manage students, teachers, and institutional records</li>
+
+        <li>To manage academic progress and assignments</li>
+
+        <li>To manage attendance records</li>
+
+        <li>To display fee and payment information</li>
+
+        <li>To send authorized notifications and updates</li>
+
+        <li>To provide technical support</li>
+
+        <li>To maintain platform security</li>
+
+        <li>To improve system functionality and reliability</li>
+
+    </ul>
+
+
+    <h2>6. Multi-Institute Data Separation</h2>
+
+    <p>
+        Institute CoreX is designed as a multi-institute platform. Access
+        to institutional information is managed through authentication,
+        roles, permissions, and data access controls.
+    </p>
+
+    <p>
+        Authorized users of one client institution are not intended to
+        access the private records of another independent institution
+        without appropriate authorization.
+    </p>
+
+
+    <h2>7. Biometric and Face Recognition Integrations</h2>
+
+    <p>
+        Certain client institutes may choose to integrate biometric or
+        face-recognition systems with Institute CoreX for attendance or
+        identity verification.
+    </p>
+
+    <p>
+        The client institution is responsible for obtaining any necessary
+        consent, authorization, or legal permission required for the use
+        of biometric or identity-verification technologies.
+    </p>
+
+    <p>
+        Institute CoreX may process attendance verification results,
+        timestamps, device logs, and related technical information required
+        for system synchronization.
+    </p>
+
+
+    <h2>8. Third-Party Services</h2>
+
+    <p>
+        RHAI TECHNOLOGY may use authorized third-party technology providers
+        where required to operate Institute CoreX.
+    </p>
+
+    <ul>
+
+        <li>Cloud hosting and infrastructure providers</li>
+
+        <li>Database and storage providers</li>
+
+        <li>Notification and messaging services</li>
+
+        <li>Payment gateway providers</li>
+
+        <li>Authentication providers</li>
+
+        <li>Biometric integration providers</li>
+
+    </ul>
+
+    <p>
+        RHAI TECHNOLOGY does not sell institutional or user data for
+        unauthorized advertising or marketing purposes.
+    </p>
+
+
+    <h2>9. Data Security</h2>
+
+    <p>
+        RHAI TECHNOLOGY implements reasonable technical and organizational
+        measures designed to protect information processed through
+        Institute CoreX.
+    </p>
+
+    <ul>
+
+        <li>Role-based access controls</li>
+
+        <li>Authentication mechanisms</li>
+
+        <li>Secure server infrastructure</li>
+
+        <li>Database access controls</li>
+
+        <li>System monitoring and logging</li>
+
+        <li>Backup and recovery mechanisms</li>
+
+        <li>Multi-institute access separation</li>
+
+    </ul>
+
+
+    <h2>10. Data Retention</h2>
+
+    <p>
+        Information may be retained for as long as necessary to provide
+        services to the client institution, maintain institutional records,
+        fulfill contractual obligations, comply with applicable legal
+        requirements, and maintain system security.
+    </p>
+
+
+    <h2>11. Children's Privacy</h2>
+
+    <p>
+        Institute CoreX may be used by educational institutions to manage
+        information relating to students under the age of 18.
+    </p>
+
+    <p>
+        The relevant client institution, such as Arise Academy, is
+        responsible for obtaining any necessary authorization from parents,
+        guardians, or other legally authorized parties where required.
+    </p>
+
+
+    <h2>12. User Rights and Data Requests</h2>
+
+    <p>
+        Students, parents, teachers, and other users who wish to access,
+        correct, update, or request deletion of institutional information
+        should generally contact their respective institute administrator.
+    </p>
+
+    <p>
+        RHAI TECHNOLOGY may provide technical assistance to the client
+        institution for authorized data requests.
+    </p>
+
+
+    <h2>13. Changes to This Privacy Policy</h2>
+
+    <p>
+        RHAI TECHNOLOGY may update this Privacy Policy to reflect changes
+        in Institute CoreX, technology, security practices, client services,
+        or applicable requirements.
+    </p>
+
+    <p>
+        The latest version will be made available through the relevant
+        application, website, or service portal.
+    </p>
+
+
+    <!-- ARISE ACADEMY APP LOGO -->
+
+    <div class="app-logo-section">
+
+        <h2>Arise Academy</h2>
+
+        <p>
+            Client Application Powered by Institute CoreX
+        </p>
+
+        <div class="app-logo">
+
+            <div class="sun">☀</div>
+
+            <div class="book">📖</div>
+
+            <strong>ARISE ACADEMY</strong>
+
+            <div class="tagline">
+                LEARN • GROW • ACHIEVE
             </div>
 
-            <h2><i class="fa-solid fa-eye-slash"></i> 2. Information Roles: Controllers vs. Processors</h2>
-            <p>
-                Understanding your organization's legal position is vital to operational compliance:
-            </p>
-            <ul>
-                <li><i class="fa-solid fa-check"></i> <strong>The Client as Controller:</strong> Your institution controls employee, client, parent, and student data collections. You remain strictly responsible for collecting authentic permissions from end-users before onboarding them to biometric or portal architectures.</li>
-                <li><i class="fa-solid fa-check"></i> <strong>ReadyHand Artificial Intelligence as Processor:</strong> We act purely under your administrative directions. We maintain database tables, manage server security profiles, and build isolated channels to securely transport data.</li>
-            </ul>
-
-            <h2><i class="fa-solid fa-lock"></i> 3. Data Retention & Infrastructure Isolation</h2>
-            <p>
-                We execute server-side data retention parameters built to align with institutional agreements:
-            </p>
-            <ul>
-                <li><i class="fa-solid fa-shield"></i> <strong>Isolation:</strong> Each company or institution runs on structurally isolated database schemas. This completely prevents cross-tenant leaks or unauthorized information leakage.</li>
-                <li><i class="fa-solid fa-shield"></i> <strong>Biometric Privacy:</strong> Our systems do not store raw biological fingerprint images or facial photographs on cloud servers. Hardware logs are securely converted into mathematical code hashes locally on the physical sensor layer before being securely synced to the cloud.</li>
-                <li><i class="fa-solid fa-shield"></i> <strong>Lifespan:</strong> Records persist on active host nodes for the absolute duration of your active subscription framework. Decommissioned data sets are structurally purged using cryptographic deletion models.</li>
-            </ul>
-
-            <h2><i class="fa-solid fa-share-nodes"></i> 4. Third-Party Integrations & Transfers</h2>
-            <p>
-                ReadyHand Artificial Intelligence does not trade, distribute, or leak your institutional database elements to marketing companies or third-party ad networks. Information passes exclusively through secure tunnels to pre-approved cloud platforms necessary to execute your workflows:
-            </p>
-            <ul>
-                <li><i class="fa-solid fa-link"></i> Meta WhatsApp Cloud API engines for operational transaction dispatches.</li>
-                <li><i class="fa-solid fa-link"></i> Encrypted banking channels and authorized payment gateways.</li>
-                <li><i class="fa-solid fa-link"></i> Enterprise cloud storage hosting clusters (such as AWS and Google Cloud Platform).</li>
-            </ul>
-
-            <h2><i class="fa-solid fa-user-gear"></i> 5. End-User Rights & Data Access</h2>
-            <p>
-                System end-users (such as parents, students, or workforce members) who wish to inspect, adjust, or completely remove information records from their profile logs must submit requests directly to their institutional administrator. Because our engineers cannot manipulate individual records without an institutional security token, your administrative desk remains the primary controller for user validation requests.
-            </p>
-
-            <h2><i class="fa-solid fa-envelope-open-text"></i> 6. Information Security Contact Desk</h2>
-            <p>
-                For immediate technical questions about your database architecture security, cloud isolation parameters, or to query information transmission compliance records, connect with our privacy review desk:
-            </p>
-            <p style="background: var(--light-bg); padding: 15px; border-radius: 6px; border-left: 4px solid var(--primary); font-family: monospace; font-size: 14px; color: var(--dark-bg);">
-                <strong>Engineering Focus:</strong> Data Protection Core<br>
-                <strong>Secure Routing Email:</strong> developerrhai@gmail.com<br>
-                <strong>Direct Line:</strong> +91 8261050815
-            </p>
         </div>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            &copy; 2026 ReadyHand Artificial Intelligence. All Rights Reserved. Data protection models logged securely.
-        </div>
-    </footer>
+        <p>
+            Arise Academy uses the Institute CoreX platform under
+            a SaaS service model.
+        </p>
+
+    </div>
+
+
+    <h2>14. Contact Us</h2>
+
+    <div class="contact-box">
+
+        <strong>RHAI TECHNOLOGY</strong><br>
+
+        Product: Institute CoreX<br>
+
+        Technology Platform:
+        ReadyHand Artificial Intelligence<br><br>
+
+        Email: developerrhai@gmail.com<br>
+
+        Phone: +91 8261050815
+
+    </div>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+            RHAI <span>TECHNOLOGY</span>
+        </h3>
+
+        <p>
+            Institute CoreX is a product owned and operated by
+            RHAI TECHNOLOGY.
+        </p>
+
+        <p>
+            Arise Academy is an independent client using Institute CoreX
+            under a Software-as-a-Service (SaaS) model.
+        </p>
+
+        <br>
+
+        <small>
+            © 2026 RHAI TECHNOLOGY. All Rights Reserved.
+        </small>
+
+        <br><br>
+
+        <small>
+            Powered by ReadyHand Artificial Intelligence
+        </small>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
+```
